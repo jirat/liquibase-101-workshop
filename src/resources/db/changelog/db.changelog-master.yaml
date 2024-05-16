@@ -1,5 +1,5 @@
 databaseChangeLog:
 
   - includeAll:
-      path: WORKSHOP
+      path: WORKSHOP/SQL
       relativeToChangelogFile: true
