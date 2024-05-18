@@ -12,13 +12,40 @@
                 <artifactId>liquibase-maven-plugin</artifactId>
                 <version>4.27.0</version>
                 <configuration> 
-                    <propertyFile>src/configuration/liquibase.properties</propertyFile>   
+                    <!-- <propertyFile>src/configuration/liquibase.properties</propertyFile>    -->
+                    <!-- <propertyFile>src/configuration/liquibase.mysql.properties</propertyFile>    -->
+                    <propertyFile>src/configuration/liquibase.mongo.properties</propertyFile>   
                 </configuration>
                 <dependencies>
                     <dependency>
                         <groupId>org.postgresql</groupId>
                         <artifactId>postgresql</artifactId>
                         <version>42.6.0</version>
+                    </dependency>
+                    <dependency>
+                        <groupId>mysql</groupId>
+                        <artifactId>mysql-connector-java</artifactId>
+                        <version>8.0.33</version>
+                    </dependency>
+                    <dependency>
+                        <groupId>org.liquibase.ext</groupId>
+                        <artifactId>liquibase-mongodb</artifactId>
+                        <version>4.24.0</version>
+                    </dependency>
+                    <dependency>
+                        <groupId>org.mongodb</groupId>
+                        <artifactId>mongodb-driver-core</artifactId>
+                        <version>5.1.0</version>
+                    </dependency>
+                    <dependency>
+                        <groupId>org.mongodb</groupId>
+                        <artifactId>mongodb-driver-sync</artifactId>
+                        <version>5.1.0</version>
+                    </dependency>
+                    <dependency>
+                        <groupId>org.mongodb</groupId>
+                        <artifactId>bson</artifactId>
+                        <version>5.1.0</version>
                     </dependency>
                 </dependencies>
             </plugin>

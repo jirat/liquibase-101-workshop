@@ -6,4 +6,3 @@ CREATE TABLE IF NOT EXISTS customer
     birth_date TEXT, 
     age     INT
 )
---rollback drop table customer;

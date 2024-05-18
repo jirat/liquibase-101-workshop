@@ -6,12 +6,28 @@ services:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: postgres
       POSTGRES_DB: customer_db
-    networks:
-      - default-network
     ports:
       - "5432:5432"
 
-networks:
-  default-network:
-    driver: bridge
-    name: default-network
+  mysql:
+    image: arm64v8/mysql:8.0-oracle
+    environment:
+      MYSQL_ROOT_PASSWORD: adminmysql
+      MYSQL_USER: mysql
+      MYSQL_PASSWORD: mysql
+      MYSQL_DATABASE: customer_mysql_db
+    ports: 
+      - "3306:3306"
+
+  mongodb: 
+    image:  mongo:latest
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: admin
+      MONGO_INITDB_ROOT_PASSWORD: password
+      MONGO_INITDB_DATABASE: customer_mongo_db
+      MONGO_INITDB_USERNAME: mongo
+      MONGO_INITDB_PASSWORD: mongo_password
+    volumes:
+      - ./init-mongo.sh:/docker-entrypoint-initdb.d/init-mongo.sh
+    ports:
+      - "27017:27017"

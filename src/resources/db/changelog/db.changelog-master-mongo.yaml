@@ -1,0 +1,8 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1
+      author: 'mongo_liquibase'
+      comment: 'create_collection_comment'
+      changes:
+        - createCollection:
+            collectionName: 'customer_address'
